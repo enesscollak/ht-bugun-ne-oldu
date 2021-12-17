@@ -1,0 +1,191 @@
+@import "../base/reset";
+@import "../vendors/swiper/swiper-7-3-1.min";
+@import "../base/_fonts";
+@import "../base/_variables";
+@import "../base/_icons";
+@import "../companents/_mega-menu";
+@import "../base/layout";
+
+
+.main {
+    width: 500px;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid var(--quaternary-color);
+
+    .featured {
+        text-align: left;
+        position: relative;
+        z-index: 100;
+        padding: 50px;
+        line-height: 1.4;
+
+        .date {
+            margin-bottom: 20px;
+            font-size: 22px;
+            opacity: 50%;
+        }
+
+        .title {
+            margin-bottom: 20px;
+            font-size: 50px;
+            line-height: 1.2;
+            font-family: var(--font-abril-fatface);
+        }
+
+        .description {
+            padding-bottom: 20px;
+            font-size: 18px;
+            color: var(--grey-color);
+        }
+    }
+
+    .copyright {
+        position: absolute;
+        left: 50px;
+        bottom: 40px;
+        font-size: 12px;
+        line-height: 1.4;
+        color: var(--grey-color);
+    }
+
+}
+
+.news-list {
+    width: calc(100% - 500px);
+    height: 100%;
+
+    .swiper {
+        width: 100%;
+        height: 100%;
+
+        .swiper-slide {
+            width: 300px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            line-height: 1.4;
+            border-right: solid 1px var(--quaternary-color);
+
+            &:hover {
+                background-color: var(--secondary-color);
+
+                .btn {
+                    background-color: var(--black-color) !important;
+                    color: var(--white-color) !important;
+                }
+
+                img {
+                    transform: scale(1.1);
+                }
+            }
+
+            .number {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                font-size: 60px;
+                font-weight: 500;
+                opacity: 10%;
+            }
+
+            .featured {
+                .date {
+                    font-size: 14px;
+                    margin-bottom: 20px;
+                }
+
+                .title {
+                    font-size: 24px;
+                    font-weight: 500;
+                    margin-bottom: 20px;
+                }
+
+                .description {
+                    font-size: 16px;
+                    color: var(--grey-color);
+                    margin-bottom: 20px;
+                }
+
+                .img {
+                    position: relative;
+                    padding-bottom: 56%;
+                    margin-bottom: 20px;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        transition: .3s;
+                    }
+                }
+
+                .btn,
+                .btn-up {
+                    background-color: transparent;
+                    color: var(--black-color);
+                    width: 100px;
+                    height: 40px;
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 25px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-decoration: none;
+                    border: 1px solid var(--quaternary-color);
+                }
+
+                .btn-up {
+                    position: absolute;
+                    bottom: 20px;
+                    color: var(--primary-color);
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:768px) {
+    .wrapper {
+        padding-left: 30px;
+
+        .main {
+            width: 100%;
+
+            .featured {
+                .title {
+                    font-size: 40px;
+                }
+            }
+
+            .copyright {
+                bottom: 30px;
+            }
+        }
+
+        .news-list {
+            width: 100%;
+
+            .swiper {
+                .swiper-slide {
+                    width: 100%;
+
+                    .number {
+                        padding: 0 25px;
+                    }
+
+                    .featured {
+                        padding: 0 20px;
+                    }
+                }
+            }
+        }
+    }
+}

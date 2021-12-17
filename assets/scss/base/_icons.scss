@@ -1,0 +1,16 @@
+$social-icon-list: (
+    icon-facebook:("facebook.svg"),
+    icon-linkedin:("linkedin.svg"),
+    icon-twitter:("twitter.svg")
+);
+
+@each $name, $value in $social-icon-list {
+    .#{$name}{
+       background-image: url("../../images/icons/black/#{nth($value , 1)}");
+       background-size: contain;
+       height: 20px;
+       width: 20px;
+       background-repeat: no-repeat;
+       background-position: center;
+    }
+}
